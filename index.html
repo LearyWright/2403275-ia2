@@ -1,0 +1,62 @@
+<!--
+Name: Leary Wright
+ID: 2403275
+Assignment: Individual Assignment #2
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cart</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body onload="loadCart()">
+
+<nav>
+  <a href="index.html">Cart</a>
+  <a href="products.html">Products</a>
+  <a href="checkout.html">Checkout</a>
+  <a href="invoice.html">Invoice</a>
+  <a href="about.html">About</a>
+  <span class="right"><a href="#" onclick="openPopup('login')">Login</a> <a href="#" onclick="openPopup('register')">Register</a></span>
+</nav>
+
+<div class="popup-bg" id="popup-bg">
+  <div class="popup" id="login">
+    <h3>Login</h3>
+    <input placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button onclick="closePopup()">Close</button>
+  </div>
+  <div class="popup" id="register">
+    <h3>Register</h3>
+    <input placeholder="Full Name">
+    <input type="date">
+    <input placeholder="Email">
+    <input placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
+
+<main>
+  <h1>Your Cart</h1>
+
+  <table class="cart-table">
+    <thead><tr><th>Item</th><th>Price</th><th>Qty</th><th>Subtotal</th></tr></thead>
+    <tbody id="cart-body"></tbody>
+  </table>
+
+  <h3 style="margin-top:1vw;">Total: <span id="cart-total">$0</span></h3>
+
+  <button class="btn" onclick="window.location='checkout.html'">Proceed to Checkout</button>
+  <button class="btn ghost" onclick="clearCart()">Clear Cart</button>
+</main>
+
+<footer>©2025</footer>
+
+<div id="cart-msg" style="display:none; position:fixed; top:20px; right:20px; background:black; color:white; padding:10px; border-radius:4px;"></div>
+
+</body>
+</html>
